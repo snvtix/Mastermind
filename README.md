@@ -78,3 +78,15 @@ Repozytorium *Natalii Ślepowrońskiej*, Kamili Kwaśniewskiej i Adama Gościnia
 2.	Zapis stanu gry i późniejszy odczyt
 3.	Zapis planszy do pliku umożliwiającego czytelny wydruk łamigłówki
     -	Wygląd eksportu – GUI
+###### Plan ról na dzień 25.04.2022
+1. Natalia Ślepowrońska
+    - Zbieranie informacji
+    - Kwestie organizacyjne
+    - Generator
+2. Kamila Kwaśniewska 
+    - Projekt i napisanie GUI
+3. Adam Gościniak
+    - Board
+    - Kulki
+4. Wszyscy
+    - Systematyczna praca nad każdymi klasami, praca grupowa, każdy każdemu pomaga.
