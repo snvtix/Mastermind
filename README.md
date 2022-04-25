@@ -1,6 +1,6 @@
 # PRM2T22L_PRO_Wagner_Mastermind
 
-Repozytorium Natalii Ślepowrońskiej, Kamili Kwaśniewskiej i Adama Gościniaka, do pracy nad projektem z przedmiotu PRM2T. Konkretnie: wykonanie gry Mastermind w javie.
+Repozytorium *Natalii Ślepowrońskiej*, Kamili Kwaśniewskiej i Adama Gościniaka, do pracy nad projektem z przedmiotu PRM2T. Konkretnie: wykonanie gry Mastermind w javie.
 
 # **Projekt PRM2T gra Mastermind**
 ###### Projekt powinien zawierać:
