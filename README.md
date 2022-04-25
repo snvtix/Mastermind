@@ -2,8 +2,8 @@
 
 Repozytorium Natalii Ślepowrońskiej, Kamili Kwaśniewskiej i Adama Gościniaka, do pracy nad projektem z przedmiotu PRM2T. Konkretnie: wykonanie gry Mastermind w javie.
 
-#**Projekt PRM2T gra Mastermind**
-######Projekt powinien zawierać:
+# **Projekt PRM2T gra Mastermind**
+###### Projekt powinien zawierać:
 1.	Generator plansz
     - Automatyczne generowanie z podanego poziomu trudności
     - Ręczne wpisanie przez użytkowników
@@ -13,20 +13,20 @@ Repozytorium Natalii Ślepowrońskiej, Kamili Kwaśniewskiej i Adama Gościniaka
     -	Cofanie ruchów
     -	Zapis stanu gry i późniejszy odczyt
     -	Zapis planszy do pliku umożliwiającego czytelny wydruk łamigłówki
-##ETAP I
+## ETAP I
 - Zaplanowanie szczegółów systemu
 - Analiza obiektowa
 - Plan ról
 - Przypadki użycia
 - Plan klas
 - Dekompozycja problemu planując metody w klasach
-######**REZULTAT**
+###### **REZULTAT**
 1.	Opis słowny przypadków użycia 
 2.	Diagram przypadków użycia
 3.	Diagram klas
 4.	Repozytorium 
 
-######Generator
+###### Generator
 1.	Zmienne wpływające na trudność planszy
     -	Tryb początkujący/ tryb klasyczny
         -	Tryb początkujący – pokazuje na konkretnej pozycji, czy dany kolor jest w kodzie/jest prawidłowy na tym miejscu
@@ -62,16 +62,16 @@ Repozytorium Natalii Ślepowrońskiej, Kamili Kwaśniewskiej i Adama Gościniaka
         -	Minimalnie 4 maksymalnie 10
     -	Boolean czy ułatwienie – nie powtarzające się kolory 
         -	Wtedy ograniczenie ilość kolorów musi być nie mniejsza niż ilość pól
-######Solver 
+###### Solver 
 1.	Podpowiedzi 
     -	Założenie gry eliminuje możliwość podpowiedzi, gra jest na tyle nie skomplikowana, że podpowiedź większa, niż taka którą gra zakłada, mogłaby negatywnie wpływać na jej odbiór
 2.	Wskazówki 
     -	Gra mastermind zakłada system wskazówek, dzięki któremu można rozwiązać łamigłówkę
     -	Rozróżnienie na tryb początkujący i klasyczny (ad. Generator 1.a)
-######Funkcje określone przez zespół
+###### Funkcje określone przez zespół
 1.	GUI
 2.	Kolory
-######Dodatkowe możliwości
+###### Dodatkowe możliwości
 1.	Cofanie ruchów
     - Cofanie ruchów może być możliwe do momentu zatwierdzenia rzędu i poznania wskazówek na jego podstawie – mechanizm, który umożliwia zmianę wyboru miejsc oraz kolorów w danej próbie
     - Dalsze cofanie, po poznaniu wskazówki, sprawiłoby, że użytkownik mógłby poprzez cofanie wygrywać gry w „Jednym ruchu”
