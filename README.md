@@ -41,11 +41,11 @@ Repozytorium *Natalii Ślepowrońskiej*, Kamili Kwaśniewskiej i Adama Gościnia
 2.	Preset ustawienia – automatyczne generowanie planszy, z możliwością zaznaczenia dodatkowych opcji 
     -	Tryb początkujący 
         -	Łatwy
-1.	4 pola, 5 kolorów, 10 prób
+        	- 4 pola, 5 kolorów, 10 prób
         -	Średni
-1.	5 pól, 6 kolorów, 10 prób
+            - 5 pól, 6 kolorów, 10 prób
         -	Trudny
-1.	6 pól, 8 kolorów, 12 prób
+            - 6 pól, 8 kolorów, 12 prób
     -	Tryb klasyczny 
         -	Łatwy
             -	4 pola, 5 kolorów, 10 prób
