@@ -92,3 +92,6 @@ Repozytorium *Natalii Ślepowrońskiej*, Kamili Kwaśniewskiej i Adama Gościnia
     - Systematyczna praca nad każdymi klasami, praca grupowa, każdy każdemu pomaga.
 ### Diagram klas (odnośnik)
 ![Diagram klas](https://scontent-waw1-1.xx.fbcdn.net/v/t1.15752-9/278299605_496944578880396_1577048329286449662_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_ohc=0W0sMUrFIlsAX-X5TaZ&_nc_ht=scontent-waw1-1.xx&oh=03_AVJgMbvXJ4zkETF3I5S_PpfsD97boVoq_d036JDLkujjKA&oe=628CFC4D)
+
+### Diagram przypadków użycia (odnośnik)
+![Diagram przypadków użycia](https://scontent-waw1-1.xx.fbcdn.net/v/t1.15752-9/279061509_431326132038393_408850108953728698_n.png?_nc_cat=110&ccb=1-5&_nc_sid=ae9488&_nc_ohc=CBJJNwhHFCoAX9XF0Ye&_nc_ht=scontent-waw1-1.xx&oh=03_AVJgRcwMm0kGZ0-Eac-rkGN0oDMMKymom-VImI50Y6fmCw&oe=628D09E9)
