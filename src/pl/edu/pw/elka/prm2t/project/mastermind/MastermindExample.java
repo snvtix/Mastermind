@@ -133,7 +133,6 @@ public class MastermindExample {
             System.out.println("wygrana");
         }
 
-
     }
 
 }
