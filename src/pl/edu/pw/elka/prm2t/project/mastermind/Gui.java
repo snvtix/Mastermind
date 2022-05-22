@@ -39,6 +39,11 @@ public class Gui extends Board implements ActionListener {
         //tutaj chyba caly mastermind zostanie napisany xd
     }
 
+    // nie wiem czypowinnismy dac actionPerformeddo nowej klasy, albo potem zrobic dwie i w zaleznosci
+    // od ustawien na generatorze wybrac ktorej uzywamy
+    // czy jeszcze  jakos inaczej, bo musi to byc zalezne od poziomu trudnosci jak sie wyswietlaja odpowiedzi
+    // + musimy ogarnac jak blokowac listy z wyborami do nastepnych kulek, bo musimy isc turowo
+
     public static void main(String[] args) {
         Gui gui = new Gui();
     }
