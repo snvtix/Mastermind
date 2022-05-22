@@ -15,17 +15,16 @@ public class Gui extends Board implements ActionListener {
     JFrame f2;
     JTextField text;
     JButton start;
-    String[] koloryOpcje = {"czerwony", "biały", "niebieski", "czarny",
-            "żółty", "pomarańczowy", "fioletowy", "zielony"};
+    String[] koloryOpcje = {"czerwony","biały","niebieski","czarny","żółty","pomarańczowy","fioletowy","zielony"};
     String[] trybyOpcje = {"początkujący","klasyczny"};
     String[] poziomyOpcje = {"łatwy","średni","trudny"};
     JComboBox kolory = new JComboBox<>(koloryOpcje); // to juz do samej gry
     JComboBox tryby = new JComboBox<>(trybyOpcje);
     JComboBox poziomy = new JComboBox<>(poziomyOpcje);
-    int tryb = 0; // zalezne od trybu i poziomu
-    int dlugoscHasla = 4; // zalezne od trybu i poziomu
-    int iloscRund = 10; // zalezne od trybu i poziomu
-    int iloscKolorow = 5;
+    int tryb;
+    int dlugoscHasla;
+    int iloscRund;
+    int iloscKolorow;
 
     Gui() {
         Board board = new Board();
@@ -43,13 +42,12 @@ public class Gui extends Board implements ActionListener {
         f1.add(start);
         f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f1.setVisible(true);
-        //f2 = new JFrame("Mastermind");
-        //f2.setSize(600, 600);
-        //f2.setLayout(new GridLayout());
-        //f2.add(board.paintComponent()); //jak tu dodac zmienne aaaa, chyba ze to napisac w action performed??
-        //f2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        //f2.setVisible(true);
-        // ogolem przyciski bedzie trzeba dodawac recznie bez layoutow + parametryzacja
+        f2 = new JFrame("Mastermind"); //to sie musi wlaczyc dopiero po wcisnieciu start
+        f2.setSize(600, 600);
+        f2.add(board); //jak tu dodac zmienne aaaa
+        f2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        f2.setVisible(true);
+        // ogolem przyciski bedzie trzeba dodawac recznie bez layoutow
         // czarne kulki to beda podpowiedzi i tam beda wyswietlacze
         // tzn ze nwm jakies male kwadraciki i jak dobrze, to sie zaswieci na czerwono czy cos
     }
@@ -101,12 +99,9 @@ public class Gui extends Board implements ActionListener {
 
         if(source == start) {
             //zaczynamy gre
+            //tu potrzebne haslo juz
         }
-
-        //tutaj gdzies tez wrzucimy SolutionGenerator zeby ify sie zgadzaly
-        //tutaj chyba caly mastermind zostanie napisany xd
     }
-
     // + musimy ogarnac jak blokowac listy z wyborami do nastepnych kulek, bo musimy isc turowo
 
     public static void main(String[] args) {

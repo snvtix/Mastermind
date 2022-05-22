@@ -4,7 +4,8 @@ import java.util.Random;
 
 public class SolutionGenerator {
 
-    //potem powiazemy to z gui
+    //potem powiazemy to z gui ALE JAK
+    //moze wrzucic ta metode do gui, bo gui juz nie moze po tym dziedziczyc
 
     public int[] haslo(int dlugoscHasla, int poziom){
         dlugoscHasla = 4; //tylkonarazie tak, dopoki z gui nie bedziemy tego wybierac
@@ -24,6 +25,4 @@ public class SolutionGenerator {
         }
         return haslo;
     }
-    //narazie robimy dla najprostrzych ustawien
-    //kazda liczba potem bedzie odpowiadac odpowiedniemu kolorowi, co bedzie mialo zastosowanie w gui
 }

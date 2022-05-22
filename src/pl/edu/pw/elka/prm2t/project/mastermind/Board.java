@@ -5,23 +5,20 @@ import java.awt.*;
 
 public class Board extends JPanel {
 
-    public void paintComponent(Graphics g, int dlugoscHasla, int iloscRund) // to jest chyba nie tak
+    public void paintComponent(Graphics g) //jak dodac zmienne???
     {
         super.paintComponent(g);
         setBackground(Color.magenta);
-        dlugoscHasla = 4;
-        iloscRund = 10;
+        int dlugoscHasla = 4;
+        int iloscRund = 10;
 
-        for(int i = 0; i < dlugoscHasla + 4; i++)
-        {
-            for(int j = 0; j <= iloscRund; j++)
-            {
-                if(i < dlugoscHasla) {
+        for (int i = 0; i < dlugoscHasla + 4; i++) {
+            for (int j = 0; j <= iloscRund; j++) {
+                if (i < dlugoscHasla) {
                     g.fillOval(0 + (i * 50), 0 + (j * 50), 50, 50);
                     g.setColor(Color.white);
-                }
-                else {
-                    g.fillOval( 22*(dlugoscHasla + 1) + (i * 25 ), 12 + (j * 50), 25, 25);
+                } else {
+                    g.fillOval(22 * (dlugoscHasla + 1) + (i * 25), 12 + (j * 50), 25, 25);
                     g.setColor(Color.black);
                 }
             }
