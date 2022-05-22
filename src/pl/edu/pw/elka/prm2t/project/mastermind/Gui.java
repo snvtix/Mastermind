@@ -7,13 +7,9 @@ import java.awt.event.ActionListener;
 
 public class Gui extends Board implements ActionListener {
 
-    // MUSZA BYC 2 GUI, JEDEN Z WYBOREM TRUDNOSCI A POTEM GRA
-    // aletopozniej
-
     // ogolem to skoro jest jakas tam plansza, to tutaj dodamy jakies wyswietlacze
     // a na bialym polu mozemy dac liste z opcjami kolorow
     // te kolory beda przypisane do cyfr (bo generator generuje cyfry)
-    // chyba ze jakos chcemy przeciagac kulki ale to troche  przekracza moje mozliwosci teraz
 
     JFrame f1;
     JFrame f2;
@@ -40,6 +36,7 @@ public class Gui extends Board implements ActionListener {
         text.setEnabled(false);
         text.setHorizontalAlignment(SwingConstants.CENTER);
         text.setDisabledTextColor(Color.BLACK);
+        JButton start = new JButton("START");
         f1.add(text);
         f1.add(tryby);
         f1.add(poziomy);
