@@ -5,12 +5,12 @@ import java.awt.*;
 
 public class Board extends JPanel {
 
-    public void paintComponent(Graphics g)
+    public void paintComponent(Graphics g, int dlugoscHasla, int iloscRund) // to jest chyba nie tak
     {
         super.paintComponent(g);
         setBackground(Color.magenta);
-        int dlugoscHasla = 4;
-        int iloscRund = 10;
+        dlugoscHasla = 4;
+        iloscRund = 10;
 
         for(int i = 0; i < dlugoscHasla + 4; i++)
         {
