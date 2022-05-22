@@ -36,7 +36,4 @@ public class Mastermind implements ActionListener {
         //tu bedzie gra nasza
     }
 
-    public static void main(String[] args) {
-        Mastermind mastermind = new Mastermind();
-    }
 }

@@ -9,7 +9,7 @@ public class Settings implements ActionListener {
 
     JFrame f1;
     JTextField text;
-    JButton start;
+    static JButton start;
     Board board = new Board();
     SolutionGenerator solutionGenerator = new SolutionGenerator();
 
@@ -105,10 +105,6 @@ public class Settings implements ActionListener {
                 iloscKolorow = 8;
             }
         }
-    }
-
-    public static void main(String[] args) {
-        Settings settings = new Settings();
     }
 }
 

@@ -8,12 +8,10 @@ public class Board extends JPanel {
     int dlugoscHasla;
     int iloscRund;
 
-    public void paintComponent(Graphics g)
-    {
+    public void paintComponent(Graphics g) {
+
         super.paintComponent(g);
         setBackground(Color.magenta);
-        dlugoscHasla = 4;
-        iloscRund = 10;
 
         for (int i = 0; i < dlugoscHasla + 4; i++) {
             for (int j = 0; j <= iloscRund; j++) {
