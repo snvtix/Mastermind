@@ -11,13 +11,17 @@ public class Gui extends Board implements ActionListener {
     // aletopozniej
 
     // ogolem to skoro jest jakas tam plansza, to tutaj dodamy jakies wyswietlacze
-    // a na kazdym rozowym polu mozemy dac liste z opcjami kolorow
+    // a na bialym polu mozemy dac liste z opcjami kolorow
     // te kolory beda przypisane do cyfr (bo generator generuje cyfry)
-    // chyba ze jakos chcemy przeciagac kulki ale to trocheprzekracza moje mozliwosci teraz
+    // chyba ze jakos chcemy przeciagac kulki ale to troche  przekracza moje mozliwosci teraz
 
     JFrame f;
-    String[] optionsAvaible = {"1","2","3","4","5"};  // kolory
+    String[] optionsAvaible = {"czerwony","fioletowy","niebieski","zielony","żółty"};
     JComboBox colors = new JComboBox<>(optionsAvaible);
+    int dlugoscHasla = 4;
+    int iloscRund = 10;
+    int tryb = 1; // sa 2 tryby, przypiszmy je do liczby,i w zaleznosci jaki to bedzie numer
+    // bedziemy podejmowac inna akcje w actionPerformed
 
     Gui() {
         Board board = new Board();
@@ -27,23 +31,19 @@ public class Gui extends Board implements ActionListener {
         f.add(board);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f.setVisible(true);
-        //ogolem przyciski bedzie trzeba dodawac recznie bez layoutow
+        // ogolem przyciski bedzie trzeba dodawac recznie bez layoutow + parametryzacja
         // czarne kulki to beda podpowiedzi i tam beda wyswietlacze
-        // tzn ze nwm jakiesmale kwadraciki i jak dobrze to sie zaswieci na czerwono czy cos
+        // tzn ze nwm jakies male kwadraciki i jak dobrze, to sie zaswieci na czerwono czy cos
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        //Object source = e.getSource();
-        //tutajgdzies tez wrzucimy SolutionGenerator zeby ify sie zgadzaly
+        Object source = e.getSource();
+        //tutaj gdzies tez wrzucimy SolutionGenerator zeby ify sie zgadzaly
         //tutaj chyba caly mastermind zostanie napisany xd
     }
 
-    // nie wiem czypowinnismy dac actionPerformeddo nowej klasy, albo potem zrobic dwie i w zaleznosci
-    // od ustawien na generatorze wybrac ktorej uzywamy
-    // czy jeszcze  jakos inaczej, bo musi to byc zalezne od poziomu trudnosci jak sie wyswietlaja odpowiedzi
     // + musimy ogarnac jak blokowac listy z wyborami do nastepnych kulek, bo musimy isc turowo
-    //
 
     public static void main(String[] args) {
         Gui gui = new Gui();

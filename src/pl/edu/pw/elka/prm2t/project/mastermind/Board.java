@@ -5,25 +5,23 @@ import java.awt.*;
 
 public class Board extends JPanel {
 
-    // to tez potem bedzie trzeba powiazac zklasa generator
-
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
-        setBackground(Color.lightGray);
+        setBackground(Color.magenta);
+        int dlugoscHasla = 4;
+        int iloscRund = 10;
 
-        for(int i = 0; i < 8; i++)
+        for(int i = 0; i < dlugoscHasla + 4; i++)
         {
-            for(int j = 0; j < 10; j++)
+            for(int j = 0; j <= iloscRund; j++)
             {
-                if(i<4){
+                if(i < dlugoscHasla) {
                     g.fillOval(0 + (i * 50), 0 + (j * 50), 50, 50);
-                    //to jest statyczne dosc, a bedzie musialo bycpowiazane zgeneratorem
-                    g.setColor(Color.magenta);
+                    g.setColor(Color.white);
                 }
-                else{
-                    g.fillOval(100 + (i * 25 ), 0 + (j * 50), 25, 25);
-                    // to tez
+                else {
+                    g.fillOval( 22*(dlugoscHasla + 1) + (i * 25 ), 12 + (j * 50), 25, 25);
                     g.setColor(Color.black);
                 }
             }

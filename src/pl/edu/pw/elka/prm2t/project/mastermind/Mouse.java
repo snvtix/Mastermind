@@ -36,8 +36,8 @@ public class Mouse extends JPanel implements MouseListener {
     public void mouseExited(MouseEvent e) {
 
     }
-    // to trzeba jeszcze rozkminić ale myślę że przydatne
-    // ogolem skopiowalam to z jakis warcabow to troszke nie powiazane
-    // ale MouseListener hmm
+    //to trzeba jeszcze rozkminic ale mysle ze przydatne
+    //ogolem skopiowalam to z jakis warcabow to troszke nie powiazane
+    //ale MouseListener hmm
 }
 
