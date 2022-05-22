@@ -36,5 +36,6 @@ public class Mouse extends JPanel implements MouseListener {
     public void mouseExited(MouseEvent e) {
 
     }
+    // to trzeba jeszcze rozkminić ale myślę że przydatne
 }
 
