@@ -43,13 +43,17 @@ public class Gui extends Board implements ActionListener {
         f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f1.setVisible(true);
         f2 = new JFrame("Mastermind"); //to sie musi wlaczyc dopiero po wcisnieciu start
-        f2.setSize(600, 600);
+        f2.setSize(600, 600); // to mozna uzaleznicod trybu, zeby bylo schludnie
         f2.add(board); //jak tu dodac zmienne aaaa
+        // na koncu mozna dac wyswietlacz ktory powie czy wygralismy czy przegralismy
+        // i moga sie tam dziac rozne rzeczy
+        // np pytanie czy chcemy grac od nowa czy cos
         f2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f2.setVisible(false);
         // ogolem przyciski bedzie trzeba dodawac recznie bez layoutow
         // czarne kulki to beda podpowiedzi i tam beda wyswietlacze
         // tzn ze nwm jakies male kwadraciki i jak dobrze, to sie zaswieci na czerwono czy cos
+        // cofanie ruchow to raczej nie bedzie problem jezeli oprzemy sie na listach z wyborem
     }
 
     // !!! chyba trzeba zrobic 2 klasy !!!
