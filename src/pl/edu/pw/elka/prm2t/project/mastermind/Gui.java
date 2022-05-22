@@ -46,11 +46,15 @@ public class Gui extends Board implements ActionListener {
         f2.setSize(600, 600);
         f2.add(board); //jak tu dodac zmienne aaaa
         f2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f2.setVisible(true);
+        f2.setVisible(false);
         // ogolem przyciski bedzie trzeba dodawac recznie bez layoutow
         // czarne kulki to beda podpowiedzi i tam beda wyswietlacze
         // tzn ze nwm jakies male kwadraciki i jak dobrze, to sie zaswieci na czerwono czy cos
     }
+
+    // !!! chyba trzeba zrobic 2 klasy !!!
+    // gui z opcjami i gui z gra
+    // ale nie wiem
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -98,6 +102,9 @@ public class Gui extends Board implements ActionListener {
         }
 
         if(source == start) {
+            f1.setVisible(false);
+            f2.setVisible(true); //cos nie pyklo
+
             //zaczynamy gre
             //tu potrzebne haslo juz
         }
