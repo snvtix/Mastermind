@@ -27,16 +27,5 @@ public class Board extends JPanel {
     }
     // cos sie nie pokolorowalo jak trzeba
 
-    public static void main(String[] args)
-    {
-        Board s = new Board();
-        JFrame frame = new JFrame("Szachownica");
-        frame.setSize(500, 600);
-        frame.setVisible(true);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.add(new Mouse());
-        frame.add(s);
-        // to tylko do sprawdzania, potem przerzucimy do do gui
-    }
 }
 
