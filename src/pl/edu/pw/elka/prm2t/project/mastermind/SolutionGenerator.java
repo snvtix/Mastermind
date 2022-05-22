@@ -8,9 +8,11 @@ public class SolutionGenerator {
     int poziom;
 
     public int[] solutionGenerator(){
+
         Random rand = new Random();
         int[] haslo = new int[dlugoscHasla];
-        for (int i = 0; i <= dlugoscHasla; i++){   //losowanie hasla
+
+        for (int i = 0; i <= dlugoscHasla; i++){ //losowanie hasla
             if(poziom == 0){
                 haslo[i] = rand.nextInt(5);
             }

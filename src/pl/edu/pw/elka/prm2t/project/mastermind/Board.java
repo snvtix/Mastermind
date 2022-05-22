@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Board extends JPanel {
+
     int dlugoscHasla;
     int iloscRund;
 

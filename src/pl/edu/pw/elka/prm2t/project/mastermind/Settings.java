@@ -5,30 +5,25 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Gui extends Board implements ActionListener {
-
-    // ogolem to skoro jest jakas tam plansza, to tutaj dodamy jakies wyswietlacze
-    // a na bialym polu mozemy dac liste z opcjami kolorow
-    // te kolory beda przypisane do cyfr (bo generator generuje cyfry)
+public class Settings implements ActionListener {
 
     JFrame f1;
-    JFrame f2;
-    Board board = new Board();
-    SolutionGenerator solutionGenerator = new SolutionGenerator();
     JTextField text;
     JButton start;
-    String[] koloryOpcje = {"czerwony","biały","niebieski","czarny","żółty","pomarańczowy","fioletowy","zielony"};
+    Board board = new Board();
+    SolutionGenerator solutionGenerator = new SolutionGenerator();
+
     String[] trybyOpcje = {"początkujący","klasyczny"};
     String[] poziomyOpcje = {"łatwy","średni","trudny"};
-    JComboBox kolory = new JComboBox<>(koloryOpcje); // to juz do samej gry
     JComboBox tryby = new JComboBox<>(trybyOpcje);
     JComboBox poziomy = new JComboBox<>(poziomyOpcje);
+
     int tryb;
     int dlugoscHasla;
     int iloscRund;
     int iloscKolorow;
 
-    Gui() {
+    Settings() {
         f1 = new JFrame("Mastermind");
         f1.setSize(300, 300);
         f1.setLayout(new GridLayout(4,1));
@@ -43,23 +38,7 @@ public class Gui extends Board implements ActionListener {
         f1.add(start);
         f1.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f1.setVisible(true);
-        f2 = new JFrame("Mastermind"); //to sie musi wlaczyc dopiero po wcisnieciu start
-        f2.setSize(600, 600); // to mozna uzaleznicod trybu, zeby bylo schludnie
-        f2.add(board); //jak tu dodac zmienne aaaa
-        // na koncu mozna dac wyswietlacz ktory powie czy wygralismy czy przegralismy
-        // i moga sie tam dziac rozne rzeczy
-        // np pytanie czy chcemy grac od nowa czy cos
-        f2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        f2.setVisible(false);
-        // ogolem przyciski bedzie trzeba dodawac recznie bez layoutow
-        // czarne kulki to beda podpowiedzi i tam beda wyswietlacze
-        // tzn ze nwm jakies male kwadraciki i jak dobrze, to sie zaswieci na czerwono czy cos
-        // cofanie ruchow to raczej nie bedzie problem jezeli oprzemy sie na listach z wyborem
     }
-
-    // !!! chyba trzeba zrobic 2 klasy !!!
-    // gui z opcjami i gui z gra
-    // ale nie wiem
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -126,19 +105,10 @@ public class Gui extends Board implements ActionListener {
                 iloscKolorow = 8;
             }
         }
-
-        if(source == start) {
-            f1.setVisible(false);
-            f2.setVisible(true); //cos nie pyklo
-
-            //zaczynamy gre
-            //tu potrzebne haslo juz
-        }
     }
-    // + musimy ogarnac jak blokowac listy z wyborami do nastepnych kulek, bo musimy isc turowo
 
     public static void main(String[] args) {
-        Gui gui = new Gui();
+        Settings settings = new Settings();
     }
 }
 
