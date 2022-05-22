@@ -37,5 +37,7 @@ public class Mouse extends JPanel implements MouseListener {
 
     }
     // to trzeba jeszcze rozkminić ale myślę że przydatne
+    // ogolem skopiowalam to z jakis warcabow to troszke nie powiazane
+    // ale MouseListener hmm
 }
 

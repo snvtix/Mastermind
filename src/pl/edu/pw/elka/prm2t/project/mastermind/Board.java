@@ -5,6 +5,8 @@ import java.awt.*;
 
 public class Board extends JPanel {
 
+    // to tez potem bedzie trzeba powiazac zklasa generator
+
     public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
@@ -16,16 +18,17 @@ public class Board extends JPanel {
             {
                 if(i<4){
                     g.fillOval(0 + (i * 50), 0 + (j * 50), 50, 50);
+                    //to jest statyczne dosc, a bedzie musialo bycpowiazane zgeneratorem
                     g.setColor(Color.magenta);
                 }
                 else{
                     g.fillOval(100 + (i * 25 ), 0 + (j * 50), 25, 25);
+                    // to tez
                     g.setColor(Color.black);
                 }
             }
         }
     }
     // cos sie nie pokolorowalo jak trzeba
-
 }
 

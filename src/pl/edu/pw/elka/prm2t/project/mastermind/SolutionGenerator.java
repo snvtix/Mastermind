@@ -4,6 +4,8 @@ import java.util.Random;
 
 public class SolutionGenerator {
 
+    // potem powiazemy toz klasa generator
+
     public int[] haslo(){
         Random rand = new Random();
         int[] haslo = new int[5];
@@ -12,7 +14,6 @@ public class SolutionGenerator {
         }
         return haslo;
     }
-
     //narazie robimy dla najprostrzych ustawien
     //kazda liczba potem bedzie odpowiadac odpowiedniemu kolorowi, co bedzie mialo zastosowanie w gui
     //5 kolorów
