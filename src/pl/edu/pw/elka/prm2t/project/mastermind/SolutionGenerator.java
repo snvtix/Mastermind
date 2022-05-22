@@ -8,7 +8,7 @@ public class SolutionGenerator {
         Random rand = new Random();
         int[] haslo = new int[5];
         for (int i = 0; i <5; i++){   //losowanie hasla
-            haslo[i] = rand.nextInt(5);
+            haslo[i] = rand.nextInt(6);
         }
         return haslo;
     }
