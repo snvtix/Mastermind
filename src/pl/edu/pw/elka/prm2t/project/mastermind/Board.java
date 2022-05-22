@@ -4,13 +4,15 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Board extends JPanel {
+    int dlugoscHasla;
+    int iloscRund;
 
-    public void paintComponent(Graphics g) //jak dodac zmienne???
+    public void paintComponent(Graphics g)
     {
         super.paintComponent(g);
         setBackground(Color.magenta);
-        int dlugoscHasla = 4;
-        int iloscRund = 10;
+        dlugoscHasla = 4;
+        iloscRund = 10;
 
         for (int i = 0; i < dlugoscHasla + 4; i++) {
             for (int j = 0; j <= iloscRund; j++) {

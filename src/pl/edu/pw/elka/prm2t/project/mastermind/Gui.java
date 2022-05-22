@@ -13,6 +13,8 @@ public class Gui extends Board implements ActionListener {
 
     JFrame f1;
     JFrame f2;
+    Board board = new Board();
+    SolutionGenerator solutionGenerator = new SolutionGenerator();
     JTextField text;
     JButton start;
     String[] koloryOpcje = {"czerwony","biały","niebieski","czarny","żółty","pomarańczowy","fioletowy","zielony"};
@@ -27,7 +29,6 @@ public class Gui extends Board implements ActionListener {
     int iloscKolorow;
 
     Gui() {
-        Board board = new Board();
         f1 = new JFrame("Mastermind");
         f1.setSize(300, 300);
         f1.setLayout(new GridLayout(4,1));
@@ -68,39 +69,60 @@ public class Gui extends Board implements ActionListener {
             if(poziomy.getSelectedIndex() == 0){
                 tryb = 0;
                 dlugoscHasla = 4;
+                solutionGenerator.dlugoscHasla = dlugoscHasla;
+                board.dlugoscHasla = dlugoscHasla;
                 iloscRund = 10;
+                board.iloscRund = iloscRund;
                 iloscKolorow = 5;
             }
             else if(poziomy.getSelectedIndex() == 1){
                 tryb = 0;
                 dlugoscHasla = 5;
+                solutionGenerator.dlugoscHasla = dlugoscHasla;
+                board.dlugoscHasla = dlugoscHasla;
                 iloscRund = 10;
+                board.iloscRund = iloscRund;
                 iloscKolorow = 6;
             }
             else if(poziomy.getSelectedIndex() == 2){
                 tryb = 0;
                 dlugoscHasla = 5;
+                solutionGenerator.dlugoscHasla = dlugoscHasla;
+                board.dlugoscHasla = dlugoscHasla;
                 iloscRund = 10;
+                board.iloscRund = iloscRund;
                 iloscKolorow = 6;
             }
         }
         else if(tryby.getSelectedIndex() == 1){ //klasyczmy
             if(poziomy.getSelectedIndex() == 0){
                 tryb = 1;
+                solutionGenerator.poziom = 0;
                 dlugoscHasla = 4;
+                solutionGenerator.dlugoscHasla = dlugoscHasla;
+                board.dlugoscHasla = dlugoscHasla;
                 iloscRund = 10;
+                board.iloscRund = iloscRund;
                 iloscKolorow = 5;
             }
             else if(poziomy.getSelectedIndex() == 1){
                 tryb = 1;
+                solutionGenerator.poziom = 1;
                 dlugoscHasla = 4;
+                solutionGenerator.dlugoscHasla = dlugoscHasla;
+                board.dlugoscHasla = dlugoscHasla;
                 iloscRund = 10;
+                board.iloscRund = iloscRund;
                 iloscKolorow = 6;
             }
             else if(poziomy.getSelectedIndex() == 2){
                 tryb = 1;
+                solutionGenerator.poziom = 2;
                 dlugoscHasla = 5;
+                solutionGenerator.dlugoscHasla = dlugoscHasla;
+                board.dlugoscHasla = dlugoscHasla;
                 iloscRund = 12;
+                board.iloscRund = iloscRund;
                 iloscKolorow = 8;
             }
         }

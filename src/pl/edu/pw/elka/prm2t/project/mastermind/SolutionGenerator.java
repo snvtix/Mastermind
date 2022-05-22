@@ -4,12 +4,10 @@ import java.util.Random;
 
 public class SolutionGenerator {
 
-    //potem powiazemy to z gui ALE JAK
-    //moze wrzucic ta metode do gui, bo gui juz nie moze po tym dziedziczyc
+    int dlugoscHasla;
+    int poziom;
 
-    public int[] haslo(int dlugoscHasla, int poziom){
-        dlugoscHasla = 4; //tylkonarazie tak, dopoki z gui nie bedziemy tego wybierac
-        poziom = 0; // same
+    public int[] solutionGenerator(){
         Random rand = new Random();
         int[] haslo = new int[dlugoscHasla];
         for (int i = 0; i <= dlugoscHasla; i++){   //losowanie hasla
