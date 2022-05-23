@@ -5,7 +5,7 @@ import java.awt.event.ActionListener;
 
 public class main implements ActionListener {
 
-    int pom = 0;
+    static int pom = 0; // fix
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -17,7 +17,7 @@ public class main implements ActionListener {
 
     public static void main(String[] args) {
         Settings settings = new Settings();
-        if(pom.equals(1)){ //??
+        if(pom == 1){ // fix
             Mastermind mastermind = new Mastermind();
         }
 
