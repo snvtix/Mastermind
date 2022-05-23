@@ -27,7 +27,7 @@ public class MastermindExample {
 
 
         System.out.println("Zgaduj liczby miedzy 1 a 9, jeśli dla pola wyświetli się komunikat \"Git\" oznacza to, że" +
-                "w tej pozycji jest prawidłowa liczba. Jeśli wyświetli się prawie git, oznacza to, że dana liczba" +
+                "w tej pozycji jest prawidłowa liczba. \nJeśli wyświetli się prawie git, oznacza to, że dana liczba" +
                 "pojawiła się w danej próbie, lecz na innym polu,");
 
 
