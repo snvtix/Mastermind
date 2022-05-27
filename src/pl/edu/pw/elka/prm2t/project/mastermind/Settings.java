@@ -104,6 +104,10 @@ public class Settings implements ActionListener {
                 board.iloscRund = iloscRund;
                 iloscKolorow = 8;
             }
+
+            if(source == start){
+                Mastermind mastermind = new Mastermind();
+            }
         }
     }
 }
