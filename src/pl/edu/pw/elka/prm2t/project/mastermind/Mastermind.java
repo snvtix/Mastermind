@@ -28,6 +28,19 @@ public class Mastermind implements ActionListener {
         // np pytanie czy chcemy grac od nowa czy cos
         f2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f2.setVisible(true);
+
+        //wyświetlić będzie łatwo bo to wsm tyle, i jak już będziemy mieli napisany kod to wystarczy w niego
+        //wrzucić takiego prostego booleana coś w stylu if(zgadnięcie == hasło){ winner = true; }
+
+        boolean winner = false;
+
+        if(winner){
+            JOptionPane.showMessageDialog(f2,"wygrana");
+        }
+        if(winner == false){
+            JOptionPane.showMessageDialog(f2,"przegrana");
+        }
+
     }
 
     @Override

@@ -16,7 +16,7 @@ public class Board extends JPanel {
         for (int i = 0; i < dlugoscHasla + 4; i++) {
             for (int j = 0; j <= iloscRund; j++) {
                 if (i < dlugoscHasla) {
-                    g.fillOval(0 + (i * 50), 0 + (j * 50), 50, 50);
+                    g.fillOval((i * 50), (j * 50), 50, 50);
                     g.setColor(Color.white);
                 } else {
                     g.fillOval(22 * (dlugoscHasla + 1) + (i * 25), 12 + (j * 50), 25, 25);

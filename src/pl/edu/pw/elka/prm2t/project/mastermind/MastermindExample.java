@@ -2,6 +2,8 @@ package pl.edu.pw.elka.prm2t.project.mastermind;
 
 import java.util.*;
 
+// Napisaliśmy przykładowy uproszczony kod mastermind, żeby móc mieć logiczną "podkładkę" do tego co możemy zrobić i jak
+//ta gra działa
 
 public class MastermindExample {
 
@@ -24,17 +26,19 @@ public class MastermindExample {
         boolean winner = false;
 
 
-        System.out.println("Jakies intrukcje czy cos, zgaduj, liczby od 1 do 9");
+        System.out.println("Zgaduj liczby miedzy 1 a 9, jeśli dla pola wyświetli się komunikat \"Git\" oznacza to, że" +
+                "w tej pozycji jest prawidłowa liczba. \nJeśli wyświetli się prawie git, oznacza to, że dana liczba" +
+                "pojawiła się w danej próbie, lecz na innym polu,");
 
 
-        int licznikZgadnięć = 0; // licznik zganięć
+        int licznikZgadniec = 0; // licznik zganięć
 
-        while (licznikZgadnięć<10) {
-            licznikZgadnięć++;
+        while (licznikZgadniec<10) {
+            licznikZgadniec++;
             int pos = 1;
 
 
-            System.out.println("Dawaj strzelaj, to już " + licznikZgadnięć + " próba, a masz 10 jak coś");
+            System.out.println("Dawaj strzelaj, to już " + licznikZgadniec + " próba, a masz 10 jak coś");
 
             for(int i =0; i<4; i++){   //ten input do odpowiedzi wrzucany tutaj
                 System.out.println("Pozycja " + pos++ + "");
@@ -122,7 +126,7 @@ public class MastermindExample {
 
             wyniki.clear(); // czyści liste żeby następne zgadnięcia tylko były wpisane bo inaczej sie burdel robi
 
-            if (licznikZgadnięć == 10) {
+            if (licznikZgadniec == 10) {
                 System.out.println("przegrana");
                 break;
             }
