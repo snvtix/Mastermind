@@ -18,6 +18,7 @@ public class Mastermind implements ActionListener {
 
     String[] koloryOpcje = {"czerwony","biały","niebieski","czarny","żółty","pomarańczowy","fioletowy","zielony"};
     JComboBox kolory = new JComboBox<>(koloryOpcje);
+    boolean winner = false;
 
     Mastermind(){
         f2 = new JFrame("Mastermind");
@@ -32,15 +33,12 @@ public class Mastermind implements ActionListener {
         //wyświetlić będzie łatwo bo to wsm tyle, i jak już będziemy mieli napisany kod to wystarczy w niego
         //wrzucić takiego prostego booleana coś w stylu if(zgadnięcie == hasło){ winner = true; }
 
-        boolean winner = false;
-
-        if(winner){
+        if(winner == true){
             JOptionPane.showMessageDialog(f2,"wygrana");
         }
         if(winner == false){
             JOptionPane.showMessageDialog(f2,"przegrana");
         }
-
     }
 
     @Override

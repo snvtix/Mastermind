@@ -9,7 +9,7 @@ public class Settings implements ActionListener {
 
     JFrame f1;
     JTextField text;
-    static JButton start;
+    JButton start = new JButton("START");;
     Board board = new Board();
     SolutionGenerator solutionGenerator = new SolutionGenerator();
 
@@ -31,7 +31,7 @@ public class Settings implements ActionListener {
         text.setEnabled(false);
         text.setHorizontalAlignment(SwingConstants.CENTER);
         text.setDisabledTextColor(Color.BLACK);
-        JButton start = new JButton("START");
+        start.addActionListener(this);
         f1.add(text);
         f1.add(tryby);
         f1.add(poziomy);
@@ -44,69 +44,74 @@ public class Settings implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
 
-        if(tryby.getSelectedIndex() == 0){ //tryb poczatkujacy
-            if(poziomy.getSelectedIndex() == 0){
-                tryb = 0;
-                dlugoscHasla = 4;
-                solutionGenerator.dlugoscHasla = dlugoscHasla;
-                board.dlugoscHasla = dlugoscHasla;
-                iloscRund = 10;
-                board.iloscRund = iloscRund;
-                iloscKolorow = 5;
-            }
-            else if(poziomy.getSelectedIndex() == 1){
-                tryb = 0;
-                dlugoscHasla = 5;
-                solutionGenerator.dlugoscHasla = dlugoscHasla;
-                board.dlugoscHasla = dlugoscHasla;
-                iloscRund = 10;
-                board.iloscRund = iloscRund;
-                iloscKolorow = 6;
-            }
-            else if(poziomy.getSelectedIndex() == 2){
-                tryb = 0;
-                dlugoscHasla = 5;
-                solutionGenerator.dlugoscHasla = dlugoscHasla;
-                board.dlugoscHasla = dlugoscHasla;
-                iloscRund = 10;
-                board.iloscRund = iloscRund;
-                iloscKolorow = 6;
-            }
-        }
-        else if(tryby.getSelectedIndex() == 1){ //klasyczmy
-            if(poziomy.getSelectedIndex() == 0){
-                tryb = 1;
-                solutionGenerator.poziom = 0;
-                dlugoscHasla = 4;
-                solutionGenerator.dlugoscHasla = dlugoscHasla;
-                board.dlugoscHasla = dlugoscHasla;
-                iloscRund = 10;
-                board.iloscRund = iloscRund;
-                iloscKolorow = 5;
-            }
-            else if(poziomy.getSelectedIndex() == 1){
-                tryb = 1;
-                solutionGenerator.poziom = 1;
-                dlugoscHasla = 4;
-                solutionGenerator.dlugoscHasla = dlugoscHasla;
-                board.dlugoscHasla = dlugoscHasla;
-                iloscRund = 10;
-                board.iloscRund = iloscRund;
-                iloscKolorow = 6;
-            }
-            else if(poziomy.getSelectedIndex() == 2){
-                tryb = 1;
-                solutionGenerator.poziom = 2;
-                dlugoscHasla = 5;
-                solutionGenerator.dlugoscHasla = dlugoscHasla;
-                board.dlugoscHasla = dlugoscHasla;
-                iloscRund = 12;
-                board.iloscRund = iloscRund;
-                iloscKolorow = 8;
-            }
 
-            if(source == start){
-                Mastermind mastermind = new Mastermind();
+        if(source == start){
+            if(tryby.getSelectedIndex() == 0){ //tryb poczatkujacy
+                if(poziomy.getSelectedIndex() == 0){
+                    tryb = 0;
+                    dlugoscHasla = 4;
+                    solutionGenerator.dlugoscHasla = dlugoscHasla;
+                    board.dlugoscHasla = dlugoscHasla;
+                    iloscRund = 10;
+                    board.iloscRund = iloscRund;
+                    iloscKolorow = 5;
+                    new Mastermind();
+                }
+                else if(poziomy.getSelectedIndex() == 1){
+                    tryb = 0;
+                    dlugoscHasla = 5;
+                    solutionGenerator.dlugoscHasla = dlugoscHasla;
+                    board.dlugoscHasla = dlugoscHasla;
+                    iloscRund = 10;
+                    board.iloscRund = iloscRund;
+                    iloscKolorow = 6;
+                    new Mastermind();
+                }
+                else if(poziomy.getSelectedIndex() == 2){
+                    tryb = 0;
+                    dlugoscHasla = 5;
+                    solutionGenerator.dlugoscHasla = dlugoscHasla;
+                    board.dlugoscHasla = dlugoscHasla;
+                    iloscRund = 10;
+                    board.iloscRund = iloscRund;
+                    iloscKolorow = 6;
+                    new Mastermind();
+                }
+            }
+            else if(tryby.getSelectedIndex() == 1){ //klasyczmy
+                if(poziomy.getSelectedIndex() == 0){
+                    tryb = 1;
+                    solutionGenerator.poziom = 0;
+                    dlugoscHasla = 4;
+                    solutionGenerator.dlugoscHasla = dlugoscHasla;
+                    board.dlugoscHasla = dlugoscHasla;
+                    iloscRund = 10;
+                    board.iloscRund = iloscRund;
+                    iloscKolorow = 5;
+                    new Mastermind();
+                }
+                else if(poziomy.getSelectedIndex() == 1){
+                    tryb = 1;
+                    solutionGenerator.poziom = 1;
+                    dlugoscHasla = 4;
+                    solutionGenerator.dlugoscHasla = dlugoscHasla;
+                    board.dlugoscHasla = dlugoscHasla;
+                    iloscRund = 10;
+                    board.iloscRund = iloscRund;
+                    iloscKolorow = 6;
+                    new Mastermind();
+                }
+                else if(poziomy.getSelectedIndex() == 2){
+                    tryb = 1;
+                    solutionGenerator.poziom = 2;
+                    dlugoscHasla = 5;
+                    solutionGenerator.dlugoscHasla = dlugoscHasla;
+                    board.dlugoscHasla = dlugoscHasla;
+                    iloscRund = 12;
+                    board.iloscRund = iloscRund;
+                    iloscKolorow = 8;
+                    new Mastermind();
+                }
             }
         }
     }
