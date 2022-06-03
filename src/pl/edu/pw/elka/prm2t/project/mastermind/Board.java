@@ -5,8 +5,8 @@ import java.awt.*;
 
 public class Board extends JPanel {
 
-    int dlugoscHasla = 1;
-    int iloscRund = 1;
+    int dlugoscHasla;
+    int iloscRund;
 
     public void setDlugoscHasla(int dlugoscHasla) {
         this.dlugoscHasla = dlugoscHasla;

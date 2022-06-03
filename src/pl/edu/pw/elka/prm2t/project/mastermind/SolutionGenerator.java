@@ -4,8 +4,8 @@ import java.util.Random;
 
 public class SolutionGenerator {
 
-    int dlugoscHasla = 1;
-    int poziom = 1;
+    int dlugoscHasla;
+    int poziom;
 
     public void setDlugoscHasla(int dlugoscHasla) {
         this.dlugoscHasla = dlugoscHasla;

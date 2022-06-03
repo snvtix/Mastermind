@@ -9,9 +9,10 @@ public class Settings implements ActionListener {
 
     JFrame f1;
     JTextField text;
-    JButton start = new JButton("START");;
+    JButton start = new JButton("START");
     Board board = new Board();
     SolutionGenerator solutionGenerator = new SolutionGenerator();
+
 
     String[] trybyOpcje = {"początkujący","klasyczny"};
     String[] poziomyOpcje = {"łatwy","średni","trudny"};
