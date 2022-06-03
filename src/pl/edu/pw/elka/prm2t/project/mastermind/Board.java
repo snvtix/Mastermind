@@ -5,8 +5,16 @@ import java.awt.*;
 
 public class Board extends JPanel {
 
-    int dlugoscHasla;
-    int iloscRund;
+    int dlugoscHasla = 1;
+    int iloscRund = 1;
+
+    public void setDlugoscHasla(int dlugoscHasla) {
+        this.dlugoscHasla = dlugoscHasla;
+    }
+
+    public void setIloscRund(int iloscRund) {
+        this.iloscRund = iloscRund;
+    }
 
     public void paintComponent(Graphics g) {
 
@@ -25,6 +33,5 @@ public class Board extends JPanel {
             }
         }
     }
-    // cos sie nie pokolorowalo jak trzeba
 }
 
