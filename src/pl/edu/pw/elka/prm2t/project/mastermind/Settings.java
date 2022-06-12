@@ -42,16 +42,19 @@ public class Settings extends Variables implements ActionListener {
             if(tryby.getSelectedIndex() == 0){ //tryb poczatkujacy
                 if(poziomy.getSelectedIndex() == 0){
                     new Variables(0,4,10);
+                    new SolutionGenerator(0,4,10);
                     iloscKolorow = 5;
                     new Mastermind(0,4,10);
                 }
                 else if(poziomy.getSelectedIndex() == 1){
                     new Variables(1,5,10);
+                    new SolutionGenerator(1,5,10);
                     iloscKolorow = 6;
                     new Mastermind(1,5,10);
                 }
                 else if(poziomy.getSelectedIndex() == 2){
                     new Variables(2,5,10);
+                    new SolutionGenerator(2,5,10);
                     iloscKolorow = 6;
                     new Mastermind(2,5,10);
                 }
@@ -59,18 +62,21 @@ public class Settings extends Variables implements ActionListener {
             else if(tryby.getSelectedIndex() == 1){ //klasyczmy
                 if(poziomy.getSelectedIndex() == 0){
                     new Variables(0,4,10);
+                    new SolutionGenerator(0,4,10);
                     iloscKolorow = 5;
                     new Mastermind(0,4,10);
                 }
                 else if(poziomy.getSelectedIndex() == 1){
                     new Variables(1,4,10);
+                    new SolutionGenerator(1,4,10);
                     iloscKolorow = 6;
                     new Mastermind(1,4,10);
                 }
                 else if(poziomy.getSelectedIndex() == 2){
                     new Variables(2,5,12);
+                    new SolutionGenerator(2,5,12);
                     iloscKolorow = 8;
-                    new Mastermind(2,5,10);
+                    new Mastermind(2,5,12);
                 }
             }
         }

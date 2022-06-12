@@ -1,6 +1,7 @@
 package pl.edu.pw.elka.prm2t.project.mastermind;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -16,16 +17,30 @@ public class Mastermind extends Variables implements ActionListener {
         super(poziom, dlugoscHasla, iloscRund);
         System.out.println(dlugoscHasla);
         f2 = new JFrame("Mastermind");
-        f2.setSize(600, 600);
+        f2.setLayout(null);
+        f2.setSize(600, 700);
         Board board = new Board(poziom, dlugoscHasla, iloscRund);
         Board.PaintBoard paintBoard = board.new PaintBoard();
+        paintBoard.setBounds(0,0,600,700);
+        paintBoard.setOpaque(true);
         f2.add(paintBoard);
+        JComboBox[] lists = new JComboBox[dlugoscHasla];
+        for (int i = 0; i < dlugoscHasla; i++) {
+            for (int j = 0; j < iloscRund; j++) {
+                lists[i]= kolory;
+                lists[i].setVisible(true);
+                lists[i].setBounds(i,  j, 10, 10);
+                f2.add(lists[i]);
+            }
+        }
         f2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f2.setVisible(true);
+    }
 
-        //wyświetlić będzie łatwo bo to wsm tyle, i jak już będziemy mieli napisany kod to wystarczy w niego
-        //wrzucić takiego prostego booleana coś w stylu if(zgadnięcie == hasło){ winner = true; }
-
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        Object source = e.getSource();
+        //tu bedzie gra nasza
         if(winner == true){
             JOptionPane.showMessageDialog(f2,"wygrana");
         }
@@ -33,11 +48,4 @@ public class Mastermind extends Variables implements ActionListener {
             JOptionPane.showMessageDialog(f2,"przegrana");
         }
     }
-
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        Object source = e.getSource();
-        //tu bedzie gra nasza
-    }
-
 }
