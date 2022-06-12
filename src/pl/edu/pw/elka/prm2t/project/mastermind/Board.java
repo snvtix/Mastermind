@@ -9,16 +9,20 @@ public class Board extends Variables {
 
         public void paintComponent(Graphics g) {
 
+            int dlugoscH = dlugoscHasla;
+            int iloscR = iloscRund;
+            System.out.println(dlugoscH);
+
             super.paintComponent(g);
             setBackground(Color.magenta);
 
-            for (int i = 0; i < dlugoscHasla + 4; i++) {
-                for (int j = 0; j <= iloscRund; j++) {
-                    if (i < dlugoscHasla) {
+            for (int i = 0; i < dlugoscH + 4; i++) {
+                for (int j = 0; j <= iloscR; j++) {
+                    if (i < dlugoscH) {
                         g.fillOval((i * 50), (j * 50), 50, 50);
                         g.setColor(Color.white);
                     } else {
-                        g.fillOval(22 * (dlugoscHasla + 1) + (i * 25), 12 + (j * 50), 25, 25);
+                        g.fillOval(22 * (dlugoscH + 1) + (i * 25), 12 + (j * 50), 25, 25);
                         g.setColor(Color.black);
                     }
                 }
