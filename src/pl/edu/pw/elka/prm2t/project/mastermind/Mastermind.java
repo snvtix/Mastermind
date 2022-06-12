@@ -11,10 +11,13 @@ public class Mastermind extends Variables implements ActionListener {
     JComboBox kolory = new JComboBox<>(koloryOpcje);
     boolean winner = false;
 
-    Mastermind(){
+
+    Mastermind(int poziom, int dlugoscHasla, int iloscRund){
+        super(poziom, dlugoscHasla, iloscRund);
+        System.out.println(dlugoscHasla);
         f2 = new JFrame("Mastermind");
         f2.setSize(600, 600);
-        Board board = new Board();
+        Board board = new Board(poziom, dlugoscHasla, iloscRund);
         Board.PaintBoard paintBoard = board.new PaintBoard();
         f2.add(paintBoard);
         f2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

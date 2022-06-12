@@ -16,7 +16,8 @@ public class Settings extends Variables implements ActionListener {
     JComboBox poziomy = new JComboBox<>(poziomyOpcje);
     int iloscKolorow;
 
-    Settings() {
+    Settings(int poziom, int dlugoscHasla, int iloscRund) {
+        super(poziom, dlugoscHasla, iloscRund);
         f1 = new JFrame("Mastermind");
         f1.setSize(300, 300);
         f1.setLayout(new GridLayout(4,1));
@@ -40,50 +41,36 @@ public class Settings extends Variables implements ActionListener {
         if(source == start){
             if(tryby.getSelectedIndex() == 0){ //tryb poczatkujacy
                 if(poziomy.getSelectedIndex() == 0){
-                    setPoziom(0);
-                    System.out.println(poziom);
-                    setDlugoscHasla(4);
-                    System.out.println(dlugoscHasla);
-                    setIloscRund(10);
+                    new Variables(0,4,10);
                     iloscKolorow = 5;
-                    new Mastermind();
+                    new Mastermind(0,4,10);
                 }
                 else if(poziomy.getSelectedIndex() == 1){
-                    setPoziom(1);
-                    setDlugoscHasla(5);
-                    setIloscRund(10);
+                    new Variables(1,5,10);
                     iloscKolorow = 6;
-                    new Mastermind();
+                    new Mastermind(1,5,10);
                 }
                 else if(poziomy.getSelectedIndex() == 2){
-                    setPoziom(2);
-                    setDlugoscHasla(5);
-                    setIloscRund(10);
+                    new Variables(2,5,10);
                     iloscKolorow = 6;
-                    new Mastermind();
+                    new Mastermind(2,5,10);
                 }
             }
             else if(tryby.getSelectedIndex() == 1){ //klasyczmy
                 if(poziomy.getSelectedIndex() == 0){
-                    setPoziom(0);
-                    setDlugoscHasla(4);
-                    setIloscRund(10);
+                    new Variables(0,4,10);
                     iloscKolorow = 5;
-                    new Mastermind();
+                    new Mastermind(0,4,10);
                 }
                 else if(poziomy.getSelectedIndex() == 1){
-                    setPoziom(1);
-                    setDlugoscHasla(4);
-                    setIloscRund(10);
+                    new Variables(1,4,10);
                     iloscKolorow = 6;
-                    new Mastermind();
+                    new Mastermind(1,4,10);
                 }
                 else if(poziomy.getSelectedIndex() == 2){
-                    setPoziom(2);
-                    setDlugoscHasla(5);
-                    setIloscRund(12);
+                    new Variables(2,5,12);
                     iloscKolorow = 8;
-                    new Mastermind();
+                    new Mastermind(2,5,10);
                 }
             }
         }

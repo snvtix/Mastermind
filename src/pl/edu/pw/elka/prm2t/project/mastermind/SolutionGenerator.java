@@ -4,8 +4,11 @@ import java.util.Random;
 
 public class SolutionGenerator extends Variables {
 
-    public int[] solutionGenerator(){
+    public SolutionGenerator(int poziom, int dlugoscHasla, int iloscRund) {
+        super(poziom, dlugoscHasla, iloscRund);
+    }
 
+    public int[] solutionGenerator(){
         Random rand = new Random();
         int[] haslo = new int[dlugoscHasla];
 

@@ -2,17 +2,13 @@ package pl.edu.pw.elka.prm2t.project.mastermind;
 
 public class Variables {
 
-    int dlugoscHasla = 0;
-    int iloscRund = 0;
-    int poziom = 0;
+    int dlugoscHasla;
+    int iloscRund;
+    int poziom;
 
-    public void setDlugoscHasla(int dlugoscHasla) {
-        this.dlugoscHasla = dlugoscHasla;
-    }
-    public void setIloscRund(int iloscRund) {
-        this.iloscRund = iloscRund;
-    }
-    public void setPoziom(int poziom) {
+    public Variables(int poziom, int dlugoscHasla, int iloscRund) {
         this.poziom = poziom;
+        this.dlugoscHasla = dlugoscHasla;
+        this.iloscRund = iloscRund;
     }
 }
