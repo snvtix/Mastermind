@@ -21,10 +21,10 @@ public class Board extends Variables {
                 for (int j = 0; j < iloscRund; j++) {
                     if (i < dlugoscHasla) {
                         g2d.setColor(Color.white);
-                        g2d.fillOval((i * 50), (j * 50), 50, 50);
+                        g2d.fillOval((i * 55), (j * 55), 55, 55);
                     } else {
                         g2d.setColor(Color.DARK_GRAY);
-                        g2d.fillOval(22 * (dlugoscHasla + 1) + (i * 25), 12 + (j * 50), 25, 25);
+                        g2d.fillOval(23 * (dlugoscHasla + 1) + (i * 27), 15 + (j * 55), 27, 27);
                     }
                 }
             }

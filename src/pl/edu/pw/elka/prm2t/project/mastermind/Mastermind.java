@@ -9,7 +9,8 @@ public class Mastermind extends Variables implements ActionListener {
 
     JFrame f2;
     String[] koloryOpcje = {"czerwony","biały","niebieski","czarny","żółty","pomarańczowy","fioletowy","zielony"};
-    JComboBox kolory = new JComboBox<>(koloryOpcje);
+    JComboBox[] options = new JComboBox[dlugoscHasla];
+    JLabel[] feedback = new JLabel[dlugoscHasla];
     boolean winner = false;
 
 
@@ -24,13 +25,14 @@ public class Mastermind extends Variables implements ActionListener {
         paintBoard.setBounds(0,0,600,700);
         paintBoard.setOpaque(true);
         f2.add(paintBoard);
-        JComboBox[] lists = new JComboBox[dlugoscHasla];
         for (int i = 0; i < dlugoscHasla; i++) {
             for (int j = 0; j < iloscRund; j++) {
-                lists[i]= kolory;
-                lists[i].setVisible(true);
-                lists[i].setBounds(i,  j, 10, 10);
-                f2.add(lists[i]);
+                options[i]= new JComboBox<>(koloryOpcje);;
+                options[i].setBounds(i*55, j*55, 55, 55);
+                feedback[i] = new JLabel();
+                feedback[i].setBounds(23 * (dlugoscHasla + 1) + (i * 27), 15 + (j * 55), 20, 20);
+                f2.add(options[i]);
+                f2.add(feedback[i]);
             }
         }
         f2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
