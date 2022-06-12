@@ -4,12 +4,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Mastermind implements ActionListener {
+public class Mastermind extends Variables implements ActionListener {
 
     JFrame f2;
-    Board board = new Board();
-    SolutionGenerator solutionGenerator = new SolutionGenerator();
-
     String[] koloryOpcje = {"czerwony","biały","niebieski","czarny","żółty","pomarańczowy","fioletowy","zielony"};
     JComboBox kolory = new JComboBox<>(koloryOpcje);
     boolean winner = false;
@@ -17,7 +14,9 @@ public class Mastermind implements ActionListener {
     Mastermind(){
         f2 = new JFrame("Mastermind");
         f2.setSize(600, 600);
-        f2.add(board);
+        Board board = new Board();
+        Board.PaintBoard paintBoard = board.new PaintBoard();
+        f2.add(paintBoard);
         f2.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f2.setVisible(true);
 

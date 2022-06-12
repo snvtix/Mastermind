@@ -2,18 +2,7 @@ package pl.edu.pw.elka.prm2t.project.mastermind;
 
 import java.util.Random;
 
-public class SolutionGenerator {
-
-    int dlugoscHasla;
-    int poziom;
-
-    public void setDlugoscHasla(int dlugoscHasla) {
-        this.dlugoscHasla = dlugoscHasla;
-    }
-
-    public void setPoziom(int poziom) {
-        this.poziom = poziom;
-    }
+public class SolutionGenerator extends Variables {
 
     public int[] solutionGenerator(){
 

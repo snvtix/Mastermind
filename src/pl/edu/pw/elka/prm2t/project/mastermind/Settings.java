@@ -5,20 +5,15 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Settings implements ActionListener {
+public class Settings extends Variables implements ActionListener {
 
     JFrame f1;
     JTextField text;
     JButton start = new JButton("START");
-    Board board = new Board();
-    SolutionGenerator solutionGenerator = new SolutionGenerator();
-
-
     String[] trybyOpcje = {"początkujący","klasyczny"};
     String[] poziomyOpcje = {"łatwy","średni","trudny"};
     JComboBox tryby = new JComboBox<>(trybyOpcje);
     JComboBox poziomy = new JComboBox<>(poziomyOpcje);
-
     int iloscKolorow;
 
     Settings() {
@@ -45,52 +40,48 @@ public class Settings implements ActionListener {
         if(source == start){
             if(tryby.getSelectedIndex() == 0){ //tryb poczatkujacy
                 if(poziomy.getSelectedIndex() == 0){
-                    solutionGenerator.setPoziom(0);
-                    solutionGenerator.setDlugoscHasla(4);
-                    board.setDlugoscHasla(4);
-                    board.setIloscRund(10);
+                    setPoziom(0);
+                    System.out.println(poziom);
+                    setDlugoscHasla(4);
+                    System.out.println(dlugoscHasla);
+                    setIloscRund(10);
                     iloscKolorow = 5;
                     new Mastermind();
                 }
                 else if(poziomy.getSelectedIndex() == 1){
-                    solutionGenerator.setPoziom(1);
-                    solutionGenerator.setDlugoscHasla(5);
-                    board.setDlugoscHasla(5);
-                    board.setIloscRund(10);
+                    setPoziom(1);
+                    setDlugoscHasla(5);
+                    setIloscRund(10);
                     iloscKolorow = 6;
                     new Mastermind();
                 }
                 else if(poziomy.getSelectedIndex() == 2){
-                    solutionGenerator.setPoziom(2);
-                    solutionGenerator.setDlugoscHasla(5);
-                    board.setDlugoscHasla(5);
-                    board.setIloscRund(10);
+                    setPoziom(2);
+                    setDlugoscHasla(5);
+                    setIloscRund(10);
                     iloscKolorow = 6;
                     new Mastermind();
                 }
             }
             else if(tryby.getSelectedIndex() == 1){ //klasyczmy
                 if(poziomy.getSelectedIndex() == 0){
-                    solutionGenerator.setPoziom(0);
-                    solutionGenerator.setDlugoscHasla(4);
-                    board.setDlugoscHasla(4);
-                    board.setIloscRund(10);
+                    setPoziom(0);
+                    setDlugoscHasla(4);
+                    setIloscRund(10);
                     iloscKolorow = 5;
                     new Mastermind();
                 }
                 else if(poziomy.getSelectedIndex() == 1){
-                    solutionGenerator.setPoziom(1);
-                    solutionGenerator.setDlugoscHasla(4);
-                    board.setDlugoscHasla(4);
-                    board.setIloscRund(10);
+                    setPoziom(1);
+                    setDlugoscHasla(4);
+                    setIloscRund(10);
                     iloscKolorow = 6;
                     new Mastermind();
                 }
                 else if(poziomy.getSelectedIndex() == 2){
-                    solutionGenerator.setPoziom(2);
-                    solutionGenerator.setDlugoscHasla(5);
-                    board.setDlugoscHasla(5);
-                    board.setIloscRund(12);
+                    setPoziom(2);
+                    setDlugoscHasla(5);
+                    setIloscRund(12);
                     iloscKolorow = 8;
                     new Mastermind();
                 }
