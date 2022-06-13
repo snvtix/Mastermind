@@ -119,7 +119,7 @@ public class Mastermind extends Variables implements ActionListener {
                             podpowiedz[i].setBackground(Color.white);
                         }
                     }
-                    else if(poziom == 1) { //to nie jest przemyslane
+                    else if(poziom == 1) {
                         if (options[i].getSelectedIndex() == pom1[i]) {
                             pom3 = rand.nextInt(dlugoscHasla);
                             while(true){
