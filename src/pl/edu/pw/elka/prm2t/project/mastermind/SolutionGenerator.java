@@ -12,7 +12,7 @@ public class SolutionGenerator extends Variables {
         Random rand = new Random();
         int[] haslo = new int[dlugoscHasla];
 
-        for (int i = 0; i <= dlugoscHasla; i++){
+        for (int i = 0; i < dlugoscHasla; i++){
             if(poziom == 0){
                 haslo[i] = rand.nextInt(5);
             }
