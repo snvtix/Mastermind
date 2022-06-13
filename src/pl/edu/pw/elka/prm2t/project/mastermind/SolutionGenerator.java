@@ -4,15 +4,15 @@ import java.util.Random;
 
 public class SolutionGenerator extends Variables {
 
-    public SolutionGenerator(int poziom, int dlugoscHasla, int iloscRund) {
-        super(poziom, dlugoscHasla, iloscRund);
+    public SolutionGenerator(int poziom, int dlugoscHasla, int iloscRund, int iloscKolorow) {
+        super(poziom, dlugoscHasla, iloscRund, iloscKolorow);
     }
 
     public int[] solutionGenerator(){
         Random rand = new Random();
         int[] haslo = new int[dlugoscHasla];
 
-        for (int i = 0; i <= dlugoscHasla; i++){ //losowanie hasla
+        for (int i = 0; i <= dlugoscHasla; i++){
             if(poziom == 0){
                 haslo[i] = rand.nextInt(5);
             }

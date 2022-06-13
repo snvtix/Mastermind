@@ -5,8 +5,8 @@ import java.awt.*;
 
 public class Board extends Variables {
 
-    public Board(int poziom, int dlugoscHasla, int iloscRund) {
-        super(poziom, dlugoscHasla, iloscRund);
+    public Board(int poziom, int dlugoscHasla, int iloscRund, int iloscKolorow) {
+        super(poziom, dlugoscHasla, iloscRund,  iloscKolorow);
     }
 
     public class PaintBoard extends JPanel{
