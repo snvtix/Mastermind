@@ -52,8 +52,10 @@ public class Mastermind extends Variables implements ActionListener {
         Object source = e.getSource();
         SolutionGenerator sG = new SolutionGenerator(poziom,dlugoscHasla,iloscRund,iloscKolorow);
         int[] pom = sG.solutionGenerator();
+        int licznik = 0;
 
         if(source == potwierdz){
+            licznik =+ 1;
             for(int i = 0; i < dlugoscHasla; i++){
                 if(options[i].getSelectedIndex() == pom[i]){
                     //kolor odpowiedniego przycisku sie zmienia
@@ -65,7 +67,7 @@ public class Mastermind extends Variables implements ActionListener {
                 }
             }
             for(int i = 0; i < dlugoscHasla; i++){
-                options[i].setBounds(i*55, 55, 55, 55);
+                options[i].setBounds(i*55, licznik*55, 55, 55);
             }
             new Mastermind(poziom,dlugoscHasla,iloscRund,iloscKolorow);
         }
