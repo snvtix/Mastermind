@@ -75,17 +75,13 @@ public class Mastermind extends Variables implements ActionListener {
 
         if(source == potwierdz){
             licznik = licznik + 1;
-            if(licznik<iloscRund){
-                for (int x = 0; x < dlugoscHasla; x++) {
-                    podpowiedz[x] = new JButton();
-                    podpowiedz[x].setBackground(Color.darkGray);
-                    podpowiedz[x].setBounds(47*(dlugoscHasla + 1)+(x*30), (licznik-1)*55+15, 27, 27);
-                    podpowiedz[x].setVisible(true);
-                    f3.add(podpowiedz[x]);
-                }
-            }
             if(licznik < iloscRund){
-                for(int i = 0; i < dlugoscHasla; i++){
+                for (int i = 0; i < dlugoscHasla; i++) {
+                    podpowiedz[i] = new JButton();
+                    podpowiedz[i].setBackground(Color.darkGray);
+                    podpowiedz[i].setBounds(47*(dlugoscHasla + 1)+(i*30), (licznik-1)*55+15, 27, 27);
+                    podpowiedz[i].setVisible(true);
+                    f3.add(podpowiedz[i]);
                     info[i] = new JButton();
                     info[i].setBounds(i*55 + 15, (licznik-1)*55+15, 27, 27);
                     if(options[i].getSelectedIndex() == 0){
@@ -117,13 +113,12 @@ public class Mastermind extends Variables implements ActionListener {
                         if(options[i].getSelectedIndex() == pom1[i]){
                             podpowiedz[i].setBackground(Color.red);
                             pom4 = pom4+1;
-
                         }
                         else{
                             podpowiedz[i].setBackground(Color.white);
                         }
                     }
-                    if(poziom == 1) { //to nie jest przemyslane
+                    else if(poziom == 1) { //to nie jest przemyslane
                         if (options[i].getSelectedIndex() == pom1[i]) {
                             pom3 = rand.nextInt(dlugoscHasla);
                             podpowiedz[pom3].setBackground(Color.red);
@@ -132,6 +127,13 @@ public class Mastermind extends Variables implements ActionListener {
                             pom3 = rand.nextInt(dlugoscHasla);
                             podpowiedz[pom3].setBackground(Color.white);
                         }
+                    }
+                    if(pom4==dlugoscHasla){
+                        winner = true;
+                        JOptionPane.showMessageDialog(f2,"Wygrałeś...");
+                    }
+                    else{
+                        winner = false;
                     }
                     f3.remove(options[i]);
                     f3.add(info[i]);
@@ -154,15 +156,6 @@ public class Mastermind extends Variables implements ActionListener {
                 f3.repaint();
             }
             else{
-                if(pom4==dlugoscHasla){
-                    winner = true;
-                }
-                else{
-                    winner = false;
-                }
-                if(winner == true){
-                    JOptionPane.showMessageDialog(f2,"Wygrałeś...");
-                }
                 if(winner == false){
                     JOptionPane.showMessageDialog(f2,"Przegrałeś XD");
                 }
