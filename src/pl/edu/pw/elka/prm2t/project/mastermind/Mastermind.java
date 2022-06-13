@@ -14,7 +14,6 @@ public class Mastermind extends Variables implements ActionListener {
     JButton potwierdz = new JButton("POTWIERDŹ");
     boolean winner = false;
 
-
     Mastermind(int poziom, int dlugoscHasla, int iloscRund, int iloscKolorow){
         super(poziom, dlugoscHasla, iloscRund, iloscKolorow);
         f2 = new JFrame("Mastermind");
@@ -25,25 +24,21 @@ public class Mastermind extends Variables implements ActionListener {
         paintBoard.setBounds(0,0,700,700);
         paintBoard.setOpaque(true);
         f2.add(paintBoard);
+        String[] pom;
         for (int i = 0; i < dlugoscHasla; i++) {
             if(poziom == 0){
-                options[i]= new JComboBox<>(koloryOpcje1);
-                options[i].setBounds(i*55, 0, 55, 55);
-                options[i].setVisible(true);
-                f2.add(options[i]);
+                pom = koloryOpcje1;
             }
             else if(poziom == 1){
-                options[i]= new JComboBox<>(koloryOpcje2);
-                options[i].setBounds(i*55, 0, 55, 55);
-                options[i].setVisible(true);
-                f2.add(options[i]);
+                pom = koloryOpcje2;
             }
             else{
-                options[i]= new JComboBox<>(koloryOpcje3);
-                options[i].setBounds(i*55, 0, 55, 55);
-                options[i].setVisible(true);
-                f2.add(options[i]);
+                pom = koloryOpcje3;
             }
+            options[i]= new JComboBox<>(pom);
+            options[i].setBounds(i*55, 0, 55, 55);
+            options[i].setVisible(true);
+            f2.add(options[i]);
         }
         potwierdz.setBounds(400, 0, 150, 50);
         potwierdz.setVisible(true);
@@ -56,11 +51,7 @@ public class Mastermind extends Variables implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         SolutionGenerator sG = new SolutionGenerator(poziom,dlugoscHasla,iloscRund,iloscKolorow);
-        int[] pom = new int[dlugoscHasla];
-
-        for(int i = 0; i < dlugoscHasla; i++){
-            pom[i] = sG.solutionGenerator()[i];
-        }
+        int[] pom = sG.solutionGenerator();
 
         if(source == potwierdz){
             for(int i = 0; i < dlugoscHasla; i++){
@@ -73,33 +64,11 @@ public class Mastermind extends Variables implements ActionListener {
                     continue;
                 }
             }
-
-            for (int j = 0; j < dlugoscHasla; j++) {
-                f2.remove(options[j]);
-            }
-            for (int k = 0; k < dlugoscHasla; k++) {
-                if(poziom == 0){
-                    options[k]= new JComboBox<>(koloryOpcje1);
-                    options[k].setBounds(k*55, 0, 55, 55);
-                    options[k].setVisible(true);
-                    f2.add(options[k]);
-                }
-                else if(poziom == 1){
-                    options[k]= new JComboBox<>(koloryOpcje2);
-                    options[k].setBounds(k*55, 0, 55, 55);
-                    options[k].setVisible(true);
-                    f2.add(options[k]);
-                }
-                else{
-                    options[k]= new JComboBox<>(koloryOpcje3);
-                    options[k].setBounds(k*55, 0, 55, 55);
-                    options[k].setVisible(true);
-                    f2.add(options[k]);
-                }
+            for(int i = 0; i < dlugoscHasla; i++){
+                options[i].setBounds(i*55, 55, 55, 55);
             }
             new Mastermind(poziom,dlugoscHasla,iloscRund,iloscKolorow);
         }
-
 
         if(winner == true){
             JOptionPane.showMessageDialog(f2,"wygrana");
