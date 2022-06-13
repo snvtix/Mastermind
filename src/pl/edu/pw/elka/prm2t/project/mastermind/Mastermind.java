@@ -60,7 +60,7 @@ public class Mastermind extends Variables implements ActionListener {
         }
         potwierdz.setVisible(true);
         potwierdz.addActionListener(this);
-        f3.add(f2);
+        f3.getContentPane().add(f2);
         f3.add(potwierdz);
         f3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f3.setVisible(true);
@@ -72,6 +72,7 @@ public class Mastermind extends Variables implements ActionListener {
         String[] pom2;
         int pom3;
         int pom4 = 0;
+        int pom5 = 10;
 
         if(source == potwierdz){
             licznik = licznik + 1;
@@ -121,11 +122,29 @@ public class Mastermind extends Variables implements ActionListener {
                     else if(poziom == 1) { //to nie jest przemyslane
                         if (options[i].getSelectedIndex() == pom1[i]) {
                             pom3 = rand.nextInt(dlugoscHasla);
-                            podpowiedz[pom3].setBackground(Color.red);
+                            while(true){
+                                if(pom3 == pom5){
+                                    pom3 = rand.nextInt(dlugoscHasla);
+                                }
+                                else{
+                                    podpowiedz[pom3].setBackground(Color.red);
+                                    break;
+                                }
+                            }
                             pom4 = pom4+1;
+                            pom5 = pom3;
                         } else {
                             pom3 = rand.nextInt(dlugoscHasla);
-                            podpowiedz[pom3].setBackground(Color.white);
+                            while(true){
+                                if(pom3 == pom5){
+                                    pom3 = rand.nextInt(dlugoscHasla);
+                                }
+                                else{
+                                    podpowiedz[pom3].setBackground(Color.white);
+                                    break;
+                                }
+                            }
+                            pom5 = pom3;
                         }
                     }
                     if(pom4==dlugoscHasla){

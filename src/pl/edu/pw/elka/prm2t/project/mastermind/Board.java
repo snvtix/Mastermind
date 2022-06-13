@@ -25,6 +25,7 @@ public class Board extends Variables {
                     }
                 }
             }
+            //g2d.drawString();
         }
     }
 }
