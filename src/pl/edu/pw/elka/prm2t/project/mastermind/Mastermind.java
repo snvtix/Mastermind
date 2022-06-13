@@ -57,45 +57,47 @@ public class Mastermind extends Variables implements ActionListener {
         Object source = e.getSource();
         SolutionGenerator sG = new SolutionGenerator(poziom,dlugoscHasla,iloscRund,iloscKolorow);
         int[] pom = new int[dlugoscHasla];
+
         for(int i = 0; i < dlugoscHasla; i++){
             pom[i] = sG.solutionGenerator()[i];
         }
+
         if(source == potwierdz){
             for(int i = 0; i < dlugoscHasla; i++){
                 if(options[i].getSelectedIndex() == pom[i]){
                     //kolor odpowiedniego przycisku sie zmienia
-                    for (int j = 0; j < dlugoscHasla; j++) {
-                        f2.remove(options[i]);
-                    }
-                    for (int k = 0; k < dlugoscHasla; k++) {
-                        if(poziom == 0){
-                            options[i]= new JComboBox<>(koloryOpcje1);
-                            options[i].setBounds(i*55, 0, 55, 55);
-                            options[i].setVisible(true);
-                            f2.add(options[i]);
-                        }
-                        else if(poziom == 1){
-                            options[i]= new JComboBox<>(koloryOpcje2);
-                            options[i].setBounds(i*55, 0, 55, 55);
-                            options[i].setVisible(true);
-                            f2.add(options[i]);
-                        }
-                        else{
-                            options[i]= new JComboBox<>(koloryOpcje3);
-                            options[i].setBounds(i*55, 0, 55, 55);
-                            options[i].setVisible(true);
-                            f2.add(options[i]);
-                        }
-                    }
-
+                    continue;
                 }
                 else{
                     //tu tez
-                    for (int i = 0; i < dlugoscHasla; i++) {
-                        f2.remove(options[i]);
-                    }
+                    continue;
                 }
             }
+
+            for (int j = 0; j < dlugoscHasla; j++) {
+                f2.remove(options[j]);
+            }
+            for (int k = 0; k < dlugoscHasla; k++) {
+                if(poziom == 0){
+                    options[k]= new JComboBox<>(koloryOpcje1);
+                    options[k].setBounds(k*55, 0, 55, 55);
+                    options[k].setVisible(true);
+                    f2.add(options[k]);
+                }
+                else if(poziom == 1){
+                    options[k]= new JComboBox<>(koloryOpcje2);
+                    options[k].setBounds(k*55, 0, 55, 55);
+                    options[k].setVisible(true);
+                    f2.add(options[k]);
+                }
+                else{
+                    options[k]= new JComboBox<>(koloryOpcje3);
+                    options[k].setBounds(k*55, 0, 55, 55);
+                    options[k].setVisible(true);
+                    f2.add(options[k]);
+                }
+            }
+            new Mastermind(poziom,dlugoscHasla,iloscRund,iloscKolorow);
         }
 
 
