@@ -8,7 +8,8 @@ import java.util.Random;
 
 public class Mastermind extends Variables implements ActionListener {
 
-    JPanel f2;
+    // [JW] Nazwy zmiennych powinny być informatywne. Trudno się domyślić, co reprezentują:
+    // f2, f3, info, pom1
     JFrame f3;
     String[] koloryOpcje1 = {"czerwony","biały","niebieski","czarny","żółty"};
     String[] koloryOpcje2 = {"czerwony","biały","niebieski","czarny","żółty","fioletowy","zielony"};
@@ -25,17 +26,16 @@ public class Mastermind extends Variables implements ActionListener {
 
     Mastermind(int poziom, int dlugoscHasla, int iloscRund, int iloscKolorow){
         super(poziom, dlugoscHasla, iloscRund, iloscKolorow);
-        f2 = new JPanel();
-        f2.setLayout(null);
-        f2.setSize(55*dlugoscHasla+340, 55*iloscRund+60);
+        // [JW] JPanel f2 zawierał tylko planszę, a plansza sama jest też JPanelem, więc można chyba z f2 w ogóle zrezygnować.
         f3 = new JFrame("Mastermind");
         f3.setLayout(null);
         f3.setSize(55*dlugoscHasla+340, 55*iloscRund+60);
+        // [JW] Uproszczenie - por. Board.java
         Board board = new Board(poziom, dlugoscHasla, iloscRund, iloscKolorow);
-        Board.PaintBoard paintBoard = board.new PaintBoard();
-        paintBoard.setBounds(0,0,700,700);
-        paintBoard.setOpaque(true);
-        f2.add(paintBoard);
+        board.setBounds(0,0,700,700);
+        board.setOpaque(true);
+        board.setSize(55*dlugoscHasla, 55*iloscRund+60);  // [JW] Plansza nie musi się rozpościerać na całe okno
+        f3.add(board);
         String[] pom;
         for (int i = 0; i < dlugoscHasla; i++) {
             if(poziom == 0){
@@ -49,7 +49,6 @@ public class Mastermind extends Variables implements ActionListener {
             }
             options[i]= new JComboBox<>(pom);
             options[i].setBounds(i*55, 0, 55, 55);
-            options[i].setVisible(true);
             f3.add(options[i]);
         }
         if(dlugoscHasla == 4){
@@ -58,9 +57,7 @@ public class Mastermind extends Variables implements ActionListener {
         else if(dlugoscHasla == 5){
             potwierdz.setBounds(440, 0, 150, 50);
         }
-        potwierdz.setVisible(true);
         potwierdz.addActionListener(this);
-        f3.getContentPane().add(f2);
         f3.add(potwierdz);
         f3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f3.setVisible(true);
@@ -149,7 +146,7 @@ public class Mastermind extends Variables implements ActionListener {
                     }
                     if(pom4==dlugoscHasla){
                         winner = true;
-                        JOptionPane.showMessageDialog(f2,"Wygrałeś...");
+                        JOptionPane.showMessageDialog(f3,"Wygrałeś...");
                     }
                     else{
                         winner = false;
@@ -176,7 +173,7 @@ public class Mastermind extends Variables implements ActionListener {
             }
             else{
                 if(winner == false){
-                    JOptionPane.showMessageDialog(f2,"Przegrałeś XD");
+                    JOptionPane.showMessageDialog(f3,"Przegrałeś XD");
                 }
             }
         }
