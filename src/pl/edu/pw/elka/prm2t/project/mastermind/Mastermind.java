@@ -4,54 +4,36 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Mastermind extends Variables implements ActionListener {
 
-    JPanel f2;
     JFrame f3;
-    String[] koloryOpcje1 = {"czerwony","biały","niebieski","czarny","żółty"};
-    String[] koloryOpcje2 = {"czerwony","biały","niebieski","czarny","żółty","fioletowy","zielony"};
-    String[] koloryOpcje3 = {"czerwony","biały","niebieski","czarny","żółty","fioletowy","zielony","błękitny"};
-    JComboBox[] options = new JComboBox[dlugoscHasla];
+    // Poniższe zmienne koloryOpcje1, koloryOpcje2 i koloryOpcje3 są ustalone raz na zawsze, a poza tym przydadzą się
+    // w klasie Board, więc mogą być final i static.
+    final static String[] koloryOpcje1 = {"czerwony","biały","niebieski","czarny","żółty"};
+    final static String[] koloryOpcje2 = {"czerwony","biały","niebieski","czarny","żółty","fioletowy","zielony"};
+    final static String[] koloryOpcje3 = {"czerwony","biały","niebieski","czarny","żółty","fioletowy","zielony","błękitny"};
     JButton potwierdz = new JButton("POTWIERDŹ");
     JButton[] podpowiedz = new JButton[dlugoscHasla];
-    JButton[] info = new JButton[dlugoscHasla];
     SolutionGenerator sG = new SolutionGenerator(poziom,dlugoscHasla,iloscRund,iloscKolorow);
     int[] pom1 = sG.solutionGenerator();
     int licznik = 0;
     Random rand = new Random();
     boolean winner = false;
+    Board board;
 
     Mastermind(int poziom, int dlugoscHasla, int iloscRund, int iloscKolorow){
         super(poziom, dlugoscHasla, iloscRund, iloscKolorow);
-        f2 = new JPanel();
-        f2.setLayout(null);
-        f2.setSize(55*dlugoscHasla+340, 55*iloscRund+60);
+
+        System.out.println(Arrays.toString(pom1));
+
         f3 = new JFrame("Mastermind");
         f3.setLayout(null);
         f3.setSize(55*dlugoscHasla+340, 55*iloscRund+60);
-        Board board = new Board(poziom, dlugoscHasla, iloscRund, iloscKolorow);
-        Board.PaintBoard paintBoard = board.new PaintBoard();
-        paintBoard.setBounds(0,0,700,700);
-        paintBoard.setOpaque(true);
-        f2.add(paintBoard);
-        String[] pom;
-        for (int i = 0; i < dlugoscHasla; i++) {
-            if(poziom == 0){
-                pom = koloryOpcje1;
-            }
-            else if(poziom == 1){
-                pom = koloryOpcje2;
-            }
-            else{
-                pom = koloryOpcje3;
-            }
-            options[i]= new JComboBox<>(pom);
-            options[i].setBounds(i*55, 0, 55, 55);
-            options[i].setVisible(true);
-            f3.add(options[i]);
-        }
+        board = new Board(poziom, dlugoscHasla, iloscRund, iloscKolorow);
+        board.setBounds(0,0,55*dlugoscHasla,700);
         if(dlugoscHasla == 4){
             potwierdz.setBounds(370, 0, 150, 50);
         }
@@ -60,7 +42,7 @@ public class Mastermind extends Variables implements ActionListener {
         }
         potwierdz.setVisible(true);
         potwierdz.addActionListener(this);
-        f3.getContentPane().add(f2);
+        f3.getContentPane().add(board);
         f3.add(potwierdz);
         f3.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         f3.setVisible(true);
@@ -77,41 +59,18 @@ public class Mastermind extends Variables implements ActionListener {
         if(source == potwierdz){
             licznik = licznik + 1;
             if(licznik < iloscRund){
+
+                int[] currentOptions = board.getCurrentOptions();
+
                 for (int i = 0; i < dlugoscHasla; i++) {
                     podpowiedz[i] = new JButton();
                     podpowiedz[i].setBackground(Color.darkGray);
                     podpowiedz[i].setBounds(47*(dlugoscHasla + 1)+(i*30), (licznik-1)*55+15, 27, 27);
                     podpowiedz[i].setVisible(true);
                     f3.add(podpowiedz[i]);
-                    info[i] = new JButton();
-                    info[i].setBounds(i*55 + 15, (licznik-1)*55+15, 27, 27);
-                    if(options[i].getSelectedIndex() == 0){
-                        info[i].setBackground(Color.red);
-                    }
-                    else if(options[i].getSelectedIndex() == 1){
-                        info[i].setBackground(Color.white);
-                    }
-                    else if(options[i].getSelectedIndex() == 2){
-                        info[i].setBackground(Color.blue);
-                    }
-                    else if(options[i].getSelectedIndex() == 3){
-                        info[i].setBackground(Color.black);
-                    }
-                    else if(options[i].getSelectedIndex() == 4){
-                        info[i].setBackground(Color.yellow);
-                    }
-                    else if(options[i].getSelectedIndex() == 5){
-                        info[i].setBackground(Color.magenta);
-                    }
-                    else if(options[i].getSelectedIndex() == 6){
-                        info[i].setBackground(Color.green);
-                    }
-                    else if(options[i].getSelectedIndex() == 7){
-                        info[i].setBackground(Color.cyan);
-                    }
-                    info[i].setVisible(true);
+
                     if(poziom == 0){
-                        if(options[i].getSelectedIndex() == pom1[i]){
+                        if(currentOptions[i] == pom1[i]){
                             podpowiedz[i].setBackground(Color.red);
                             pom4 = pom4+1;
                         }
@@ -120,7 +79,7 @@ public class Mastermind extends Variables implements ActionListener {
                         }
                     }
                     else if(poziom == 1) {
-                        if (options[i].getSelectedIndex() == pom1[i]) {
+                        if (currentOptions[i] == pom1[i]) {
                             pom3 = rand.nextInt(dlugoscHasla);
                             while(true){
                                 if(pom3 == pom5){
@@ -149,34 +108,19 @@ public class Mastermind extends Variables implements ActionListener {
                     }
                     if(pom4==dlugoscHasla){
                         winner = true;
-                        JOptionPane.showMessageDialog(f2,"Wygrałeś...");
+                        JOptionPane.showMessageDialog(f3,"Wygrałeś...");
                     }
                     else{
                         winner = false;
                     }
-                    f3.remove(options[i]);
-                    f3.add(info[i]);
                 }
-                for (int i = 0; i < dlugoscHasla; i++) {
-                    if(poziom == 0){
-                        pom2 = koloryOpcje1;
-                    }
-                    else if(poziom == 1){
-                        pom2 = koloryOpcje2;
-                    }
-                    else{
-                        pom2 = koloryOpcje3;
-                    }
-                    options[i]= new JComboBox<>(pom2);
-                    options[i].setBounds(i*55, licznik*55, 55, 55);
-                    options[i].setVisible(true);
-                    f3.add(options[i]);
-                }
+                board.storeOptions();
+                board.moveOptionsBoxes(licznik);
                 f3.repaint();
             }
             else{
                 if(winner == false){
-                    JOptionPane.showMessageDialog(f2,"Przegrałeś XD");
+                    JOptionPane.showMessageDialog(f3,"Przegrałeś XD");
                 }
             }
         }
