@@ -1,9 +1,9 @@
 # PRM2T22L_PRO_Slepowronska_Mastermind
 
-Repozytorium *Natalii Ślepowrońskiej*, Kamili Kwaśniewskiej i Adama Gościniaka, do pracy nad projektem z przedmiotu PRM2T. Konkretnie: wykonanie gry Mastermind w javie.
+Wykonanie gry Mastermind w języku Java.
 
 # **Projekt PRM2T gra Mastermind**
-###### Projekt powinien zawierać:
+Zawartość projektu:
 1.	Generator plansz
     - Automatyczne generowanie z podanego poziomu trudności
     - Ręczne wpisanie przez użytkowników
@@ -13,18 +13,6 @@ Repozytorium *Natalii Ślepowrońskiej*, Kamili Kwaśniewskiej i Adama Gościnia
     -	Cofanie ruchów
     -	Zapis stanu gry i późniejszy odczyt
     -	Zapis planszy do pliku umożliwiającego czytelny wydruk łamigłówki
-## ETAP I
-- Zaplanowanie szczegółów systemu
-- Analiza obiektowa
-- Plan ról
-- Przypadki użycia
-- Plan klas
-- Dekompozycja problemu planując metody w klasach
-###### **REZULTAT**
-1.	Opis słowny przypadków użycia 
-2.	Diagram przypadków użycia
-3.	Diagram klas
-4.	Repozytorium 
 
 ###### Generator
 1.	Zmienne wpływające na trudność planszy
@@ -68,9 +56,6 @@ Repozytorium *Natalii Ślepowrońskiej*, Kamili Kwaśniewskiej i Adama Gościnia
 2.	Wskazówki 
     -	Gra mastermind zakłada system wskazówek, dzięki któremu można rozwiązać łamigłówkę
     -	Rozróżnienie na tryb początkujący i klasyczny (ad. Generator 1.a)
-###### Funkcje określone przez zespół
-1.	GUI
-2.	Kolory
 ###### Dodatkowe możliwości
 1.	Cofanie ruchów
     - Cofanie ruchów może być możliwe do momentu zatwierdzenia rzędu i poznania wskazówek na jego podstawie – mechanizm, który umożliwia zmianę wyboru miejsc oraz kolorów w danej próbie
@@ -78,18 +63,7 @@ Repozytorium *Natalii Ślepowrońskiej*, Kamili Kwaśniewskiej i Adama Gościnia
 2.	Zapis stanu gry i późniejszy odczyt
 3.	Zapis planszy do pliku umożliwiającego czytelny wydruk łamigłówki
     -	Wygląd eksportu – GUI
-###### Plan ról na dzień 25.04.2022
-1. Natalia Ślepowrońska
-    - Zbieranie informacji
-    - Kwestie organizacyjne
-    - Generator
-2. Kamila Kwaśniewska 
-    - Projekt i napisanie GUI
-3. Adam Gościniak
-    - Board
-    - Kulki
-4. Wszyscy
-    - Systematyczna praca nad każdymi klasami, praca grupowa, każdy każdemu pomaga.
+
 ### Diagram klas (odnośnik)
 ![Diagram klas](https://scontent-waw1-1.xx.fbcdn.net/v/t1.15752-9/278299605_496944578880396_1577048329286449662_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_ohc=0W0sMUrFIlsAX-X5TaZ&_nc_ht=scontent-waw1-1.xx&oh=03_AVJgMbvXJ4zkETF3I5S_PpfsD97boVoq_d036JDLkujjKA&oe=628CFC4D)
 
