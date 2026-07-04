@@ -1,71 +1,64 @@
-# PRM2T22L_PRO_Slepowronska_Mastermind
+# **PRM2T Project – Mastermind Game**
 
-Wykonanie gry Mastermind w języku Java.
-
-# **Projekt PRM2T gra Mastermind**
-Zawartość projektu:
-1.	Generator plansz
-    - Automatyczne generowanie z podanego poziomu trudności
-    - Ręczne wpisanie przez użytkowników
-2.	Solver
-3.	Funkcje określone przez zespół:
-4.	Program powinien umożliwiać:
-    -	Cofanie ruchów
-    -	Zapis stanu gry i późniejszy odczyt
-    -	Zapis planszy do pliku umożliwiającego czytelny wydruk łamigłówki
+Project contents:
+1. Board generator
+    - Automatic generation based on selected difficulty level
+    - Manual input provided by users
+2. Solver
+3. Functions defined by the team:
+4. The program should allow:
+    - Undoing moves
+    - Saving the game state and loading it later
+    - Saving the board to a file that allows a clear printed version of the puzzle
 
 ###### Generator
-1.	Zmienne wpływające na trudność planszy
-    -	Tryb początkujący/ tryb klasyczny
-        -	Tryb początkujący – pokazuje na konkretnej pozycji, czy dany kolor jest w kodzie/jest prawidłowy na tym miejscu
-        -	Tryb klasyczny – gra pokazuje po prostu ilość dobrego koloru/ kolorów w prawidłowym miejscu, niekoniecznie wskazując na to, która pozycja jest dobra
-    -	Ilość pól
-    -	Ilość kolorów (w stosunku do pól)
-    -	Ilość prób
-    -	Dodatkowe
-        -	Ekstra kolor
-        -	Minus jedna próba 
-        -	Ułatwienie – nie powtarzające się kolory
-2.	Preset ustawienia – automatyczne generowanie planszy, z możliwością zaznaczenia dodatkowych opcji 
-    -	Tryb początkujący 
-        -	Łatwy
-        	- 4 pola, 5 kolorów, 10 prób
-        -	Średni
-            - 5 pól, 6 kolorów, 10 prób
-        -	Trudny
-            - 6 pól, 8 kolorów, 12 prób
-    -	Tryb klasyczny 
-        -	Łatwy
-            -	4 pola, 5 kolorów, 10 prób
-        -	Średni
-            -	4 pola, 6 kolorów, 10 prób
-        -	Trudny
-            -	5 pól, 8 kolorów, 12 prób
-3.	Wpisywanie przez użytkownika – dostępne pola i ograniczenia
-    -	Ilość pól
-        -	Minimalnie 4 maksymalnie 6
-    -	Ilość prób 
-        -	Liczba parzysta minimalnie 8 maksymalnie 14
-    -	Ilość kolorów
-        -	Minimalnie 4 maksymalnie 10
-    -	Boolean czy ułatwienie – nie powtarzające się kolory 
-        -	Wtedy ograniczenie ilość kolorów musi być nie mniejsza niż ilość pól
-###### Solver 
-1.	Podpowiedzi 
-    -	Założenie gry eliminuje możliwość podpowiedzi, gra jest na tyle nie skomplikowana, że podpowiedź większa, niż taka którą gra zakłada, mogłaby negatywnie wpływać na jej odbiór
-2.	Wskazówki 
-    -	Gra mastermind zakłada system wskazówek, dzięki któremu można rozwiązać łamigłówkę
-    -	Rozróżnienie na tryb początkujący i klasyczny (ad. Generator 1.a)
-###### Dodatkowe możliwości
-1.	Cofanie ruchów
-    - Cofanie ruchów może być możliwe do momentu zatwierdzenia rzędu i poznania wskazówek na jego podstawie – mechanizm, który umożliwia zmianę wyboru miejsc oraz kolorów w danej próbie
-    - Dalsze cofanie, po poznaniu wskazówki, sprawiłoby, że użytkownik mógłby poprzez cofanie wygrywać gry w „Jednym ruchu”
-2.	Zapis stanu gry i późniejszy odczyt
-3.	Zapis planszy do pliku umożliwiającego czytelny wydruk łamigłówki
-    -	Wygląd eksportu – GUI
+1. Variables affecting board difficulty
+    - Beginner mode / Classic mode
+        - Beginner mode – shows for a specific position whether a given color is in the code / is correct in that position
+        - Classic mode – the game simply shows the number of correct colors / colors in the correct position, without indicating which position is correct
+    - Number of fields
+    - Number of colors (relative to fields)
+    - Number of attempts
+    - Additional options
+        - Extra color
+        - Minus one attempt
+        - Facilitation – non-repeating colors
+2. Preset settings – automatic board generation with the option to select additional features
+    - Beginner mode
+        - Easy
+            - 4 fields, 5 colors, 10 attempts
+        - Medium
+            - 5 fields, 6 colors, 10 attempts
+        - Hard
+            - 6 fields, 8 colors, 12 attempts
+    - Classic mode
+        - Easy
+            - 4 fields, 5 colors, 10 attempts
+        - Medium
+            - 4 fields, 6 colors, 10 attempts
+        - Hard
+            - 5 fields, 8 colors, 12 attempts
+3. Manual input – available fields and restrictions
+    - Number of fields
+        - Minimum 4, maximum 6
+    - Number of attempts
+        - Even number, minimum 8, maximum 14
+    - Number of colors
+        - Minimum 4, maximum 10
+    - Boolean for facilitation – non-repeating colors
+        - In this case, the number of colors must not be smaller than the number of fields
 
-### Diagram klas (odnośnik)
-![Diagram klas](https://scontent-waw1-1.xx.fbcdn.net/v/t1.15752-9/278299605_496944578880396_1577048329286449662_n.png?_nc_cat=106&ccb=1-5&_nc_sid=ae9488&_nc_ohc=0W0sMUrFIlsAX-X5TaZ&_nc_ht=scontent-waw1-1.xx&oh=03_AVJgMbvXJ4zkETF3I5S_PpfsD97boVoq_d036JDLkujjKA&oe=628CFC4D)
+###### Solver
+1. Hints
+    - The game design eliminates the possibility of hints; the game is simple enough that providing more hints than intended could negatively affect the experience
+2. Clues
+    - Mastermind uses a clue system that allows the puzzle to be solved
+    - Distinction between beginner and classic mode (see Generator 1.a)
 
-### Diagram przypadków użycia (odnośnik)
-![Diagram przypadków użycia](https://scontent-waw1-1.xx.fbcdn.net/v/t1.15752-9/279061509_431326132038393_408850108953728698_n.png?_nc_cat=110&ccb=1-5&_nc_sid=ae9488&_nc_ohc=CBJJNwhHFCoAX9XF0Ye&_nc_ht=scontent-waw1-1.xx&oh=03_AVJgRcwMm0kGZ0-Eac-rkGN0oDMMKymom-VImI50Y6fmCw&oe=628D09E9)
+###### Additional features
+1. Undoing moves
+    - Undoing moves is possible until the row is confirmed and clues are revealed – a mechanism that allows changing positions and colors in a given attempt
+    - Further undoing after receiving clues would allow the user to win the game “in one move”
+2. Saving the game state and loading it later
+3. Saving the board to a file that allows a clear printed version of the puzzle
+    - Export appearance – GUI
